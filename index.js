@@ -1,5 +1,8 @@
 import "./styles.css";
 
+<script type ="text/javascript">
+window.alert("Here you can find some of my JS program codes </script>
+
 document.getElementById("app").innerHTML = `
 <h1>Hello Visitor!</h1>
 <div>
