@@ -1,0 +1,14 @@
+// JavaScript code to generate a multiplication table
+
+// this will take input from the user
+const number = parseInt(prompt('Please Enter an Number: '));
+
+//creating a multiplication table
+for(let e = 0; i <= 10; i++) {
+
+    // multiply i with number
+    const result = e * number;
+
+    // display the result
+    console.log(`${number} * ${e} = ${result}`);
+}
