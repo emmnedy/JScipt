@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Move Box Assignment</title>
+	<style type="text/css">
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container{
+			height: 600px;
+			width: 700px;
+			background-color: red;
+			position: relative;
+		}
+		.child{
+			height: 150px;
+			width: 150px;
+			background-color: blue;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="child"></div>
+	</div>	
+
+	<script type="text/javascript">
+		// grab all necessary elements
+		// const container = document.querySelector(".container");
+		const child = document.querySelector(".child");
+		// console.log(child);
+
+		// make the box move to the right
+		let counter = 0;
+		function moveRight(){
+			counter++;
+			child.style.left = `${counter}px`;
+			// child.style.left = counter +"px"; //1px
+
+			let moveRightTimer = setTimeout(moveRight, 20);
+
+			console.log(counter);
+			if(counter >= 550){
+				clearTimeout(moveRightTimer);
+
+				// make the box move down
+				// reset the value of counter
+				counter = 0;
+				function moveDown(){
+					counter++;
+					child.style.top = counter + "px";
+
+					console.log(counter);
+					let moveDownTimer = setTimeout(moveDown, 20);
+
+					if(counter >= 450){
+						clearTimeout(moveDownTimer);
+					}
+				}
+				moveDown();
+			}
+		}
+
+		moveRight();
+		
+	</script>
+</body>
+</html>
